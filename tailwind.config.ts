@@ -24,11 +24,18 @@ const config: Config = {
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.03)' },
         },
+        bounceSlide: {
+          '0%': { transform: 'translateX(-100%)' },
+          '80%': { transform: 'translateX(0%)' },
+          '90%': { transform: 'translateX(-10%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
       },
       animation: {
         slideIn: 'slideIn 2s ease-out 0.4s', 
         slideInP: 'slideIn 2s ease-out 0.7s', 
         heartbeat: 'heartbeat 1.5s ease-in-out infinite',
+        bounceSlide: 'bounceSlide 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards',
       
       },
     },
