@@ -1,16 +1,39 @@
-
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import { BsSearch } from "react-icons/bs";
 import { GoPerson } from "react-icons/go";
 import { BsCart3 } from "react-icons/bs";
+import { usePathname } from 'next/navigation';
 
 
 
 
 
 const Navbar = () => {
+    const pathname = usePathname()
+
+    const [lastScrollTop, setLastScrollTop] = useState(0);
+    const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > lastScrollTop) {
+        setIsHeaderVisible(false);
+      } else {
+        setIsHeaderVisible(true);
+      }
+      setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
+    };
+  
+    useEffect(() => {
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, [lastScrollTop]);
+      
   return (
-    <div className='flex justify-between items-center shadow-custom px-[25px]'>
+    <div className={`flex justify-between items-center shadow-custom px-[25px] transition-transform duration-300 ${isHeaderVisible ? 'translate-y-0' : '-translate-y-full'}`}>
 
         <div className='cursor-pointer'>
             <img src="https://preview.colorlib.com/theme/timezone/assets/img/logo/logo.png.webp" alt="lo" />
@@ -18,11 +41,11 @@ const Navbar = () => {
         <div>
             <nav>
                 <ul className='flex text-[#141517] font-[600] '>
-                    <li className='py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500'>
-                        <a href="">Home</a>
+                    <li className={`py-[41px] px-[21px] ${ pathname === '/timezone/home' ? 'text-[#E3411A]' : 'text-black'} hover:text-[#FF1D20] transition-colors duration-500`}>
+                        <a href="/timezone/home">Home</a>
                     </li>
-                    <li className='py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500'>
-                        <a href="">Shop</a>
+                    <li className={`py-[41px] px-[21px] ${ pathname === '/timezone/shop' ? 'text-[#E3411A]' : 'text-black'} hover:text-[#FF1D20] transition-colors duration-500`}>
+                        <a href="/timezone/shop">Shop</a>
                     </li>
                     <li className='py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500'>
                         <a href="">About</a>

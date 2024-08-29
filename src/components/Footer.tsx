@@ -1,10 +1,19 @@
 import React from 'react'
 import { IoHeartSharp } from "react-icons/io5";
+import { FaTwitter } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
+import { FaGlobe } from "react-icons/fa";
+import { LiaBehance } from "react-icons/lia";
+
+
+
+
+
 
 
 const Footer = () => {
   return (
-    <div className='w-full max-w-[1170px] mx-auto mb-[200px] '>
+    <div className='w-full max-w-[1170px] mx-auto mb-[100px] '>
         <div className='flex mb-[100px]'>
             <div className='w-[25%]'>
                 <img className='mb-[40px]' src="https://preview.colorlib.com/theme/timezone/assets/img/logo/logo2_footer.png" alt="" />
@@ -39,15 +48,24 @@ const Footer = () => {
                     </ul>
             </div>
         </div>
-        <div>
-            <div className='flex items-center'>
-                <span className='text-[#FF2020]'>Copyright ©2024 All rights reserved | This template is made with</span>
+        <div className='flex justify-between'>
+            <div className='flex items-center gap-[5px]'>
+                <span className='text-[#888]'>Copyright ©2024 All rights reserved | This template is made with</span>
                 <IoHeartSharp className='text-[#FF2020]' />
-                <span className='text-[#FF2020]'>by</span>
+                <span className='text-[#88] text-[#888]'>by</span>
                 <span className='text-[#FF2020]'>Colorlib</span>
 
             </div>
-            <div></div>
+            <div className='flex gap-[10px] text-[#222]'>
+                <FaTwitter className='w-[14px] h-[14px]' />
+                <FaFacebookF className='w-[14px] h-[14px]' />
+                <LiaBehance  className='w-[14px] h-[14px] text-[20px]' />
+                <FaGlobe className='w-[14px] h-[14px]' />
+                
+
+
+
+            </div>
         </div>
     </div>
   )

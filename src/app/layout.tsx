@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "../components/Footer";
+import ClientNavbar from "@/helpers/LoginNavbarNull";
+import ClientFooter from "@/helpers/LoginFooterNull";
 
 const josefinSans = Josefin_Sans({ 
   subsets: ["latin"],
@@ -21,8 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={josefinSans.className}>
+       <ClientNavbar/>
         {children}
-        <Footer/>
+        <ClientFooter/>
       </body>
     </html>
   );
