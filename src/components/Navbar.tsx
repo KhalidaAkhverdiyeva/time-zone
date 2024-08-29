@@ -4,10 +4,27 @@ import { BsSearch } from "react-icons/bs";
 import { GoPerson } from "react-icons/go";
 import { BsCart3 } from "react-icons/bs";
 import { usePathname } from 'next/navigation';
+import DropdownMenu from './DropdownMenu';
 
 
 
-
+const itemsLatest = [
+    { href: '/timezone/product_details', text: 'Product List' },
+    { href: '/timezone/product_details', text: 'Product Details' },
+  
+  ];
+const itemsBlog = [
+    { href: '/timezone/blog', text: 'Blog' },
+    { href: '/timezone/blog_details', text: 'Blog Details' },
+  
+  ];
+const itemsPages = [
+    { href: '/timezone/blog', text: 'Cart' },
+    { href: '/timezone/blog_details', text: 'Element' },
+    { href: '/timezone/blog_details', text: 'Confirmation' },
+    { href: '/timezone/blog_details', text: 'Product Checkout' },
+  
+  ];
 
 const Navbar = () => {
     const pathname = usePathname()
@@ -47,18 +64,21 @@ const Navbar = () => {
                     <li className={`py-[41px] px-[21px] ${ pathname === '/timezone/shop' ? 'text-[#E3411A]' : 'text-black'} hover:text-[#FF1D20] transition-colors duration-500`}>
                         <a href="/timezone/shop">Shop</a>
                     </li>
-                    <li className='py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500'>
-                        <a href="">About</a>
+                    <li className={`py-[41px] px-[21px] ${ pathname === '/timezone/about' ? 'text-[#E3411A]' : 'text-black'} hover:text-[#FF1D20] transition-colors duration-500`}>
+                        <a href="/timezone/about">About</a>
                     </li>
-                    <li className='relative py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500'>
+                    <li className='relative py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500 group'>
                         <a href="">Latest</a>
+                        <DropdownMenu items={itemsLatest} />
                         <span style={{ boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)' }} className="absolute top-[20px] flex justify-center items-center right-[-13px] bg-[#FF003C] text-white text-[10px]  px-2 pt-1 rounded-[8px]">HOT</span>
                     </li>
-                    <li className='py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500'>
+                    <li className=' relative py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500 group'>
                         <a href="">Blog</a>
+                        <DropdownMenu items={itemsBlog} />
                     </li>
-                    <li className='py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500'>
+                    <li className='relative py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500 group'>
                         <a href="">Pages</a>
+                        <DropdownMenu items={itemsPages} />
                     </li>
                     <li className='py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500'>
                         <a href="">Contact</a>
