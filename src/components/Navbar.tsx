@@ -5,6 +5,7 @@ import { GoPerson } from "react-icons/go";
 import { BsCart3 } from "react-icons/bs";
 import { usePathname } from 'next/navigation';
 import DropdownMenu from './DropdownMenu';
+import SearchModal from './SearchModal';
 
 
 
@@ -31,6 +32,10 @@ const Navbar = () => {
 
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
   
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -87,7 +92,8 @@ const Navbar = () => {
             </nav>
         </div>
         <div className='flex  '>
-            <div className='py-[31px] px-[19px] text-[20px] hover:text-[#FF1D20] transition-colors duration-500 cursor-pointer'><BsSearch /></div>
+            <div onClick={openModal} className='py-[31px] px-[19px] text-[20px] hover:text-[#FF1D20] transition-colors duration-500 cursor-pointer'><BsSearch /></div>
+            <SearchModal isOpen={isModalOpen} onClose={closeModal} />
             <div className='py-[31px] px-[19px] text-[20px] hover:text-[#FF1D20] transition-colors duration-500 cursor-pointer'><GoPerson /></div>
             <div className='py-[31px] px-[19px] text-[20px] hover:text-[#FF1D20] transition-colors duration-500 cursor-pointer'><BsCart3 /></div>
 
