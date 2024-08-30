@@ -6,6 +6,7 @@ import { BsCart3 } from "react-icons/bs";
 import { usePathname } from 'next/navigation';
 import DropdownMenu from './DropdownMenu';
 import SearchModal from './SearchModal';
+import Link from 'next/link';
 
 
 
@@ -64,29 +65,29 @@ const Navbar = () => {
             <nav>
                 <ul className='flex text-[#141517] font-[600] '>
                     <li className={`py-[41px] px-[21px] ${ pathname === '/timezone/home' ? 'text-[#E3411A]' : 'text-black'} hover:text-[#FF1D20] transition-colors duration-500`}>
-                        <a href="/timezone/home">Home</a>
+                        <Link href="/timezone/home">Home</Link>
                     </li>
                     <li className={`py-[41px] px-[21px] ${ pathname === '/timezone/shop' ? 'text-[#E3411A]' : 'text-black'} hover:text-[#FF1D20] transition-colors duration-500`}>
-                        <a href="/timezone/shop">Shop</a>
+                        <Link href="/timezone/shop">Shop</Link>
                     </li>
                     <li className={`py-[41px] px-[21px] ${ pathname === '/timezone/about' ? 'text-[#E3411A]' : 'text-black'} hover:text-[#FF1D20] transition-colors duration-500`}>
-                        <a href="/timezone/about">About</a>
+                        <Link href="/timezone/about">About</Link>
                     </li>
                     <li className='relative py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500 group'>
-                        <a href="">Latest</a>
+                        <Link href="">Latest</Link>
                         <DropdownMenu items={itemsLatest} />
                         <span style={{ boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)' }} className="absolute top-[20px] flex justify-center items-center right-[-13px] bg-[#FF003C] text-white text-[10px]  px-2 pt-1 rounded-[8px]">HOT</span>
                     </li>
                     <li className=' relative py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500 group'>
-                        <a href="">Blog</a>
+                        <Link href="">Blog</Link>
                         <DropdownMenu items={itemsBlog} />
                     </li>
                     <li className='relative py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500 group'>
-                        <a href="">Pages</a>
+                        <Link href="">Pages</Link>
                         <DropdownMenu items={itemsPages} />
                     </li>
                     <li className='py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500'>
-                        <a href="">Contact</a>
+                        <Link href="">Contact</Link>
                     </li>
                 </ul>
             </nav>

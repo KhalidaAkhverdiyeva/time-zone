@@ -11,7 +11,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black h-[100vh]  flex justify-center items-center z-50">
+    <div className="fixed inset-0 bg-black h-[100vh]  flex justify-center items-center z-9999">
       <div className="bg-transparent p-6 rounded-lg relative ">
         <div className='absolute top-[-230px] left-[230px] w-[70px] h-[70px] bg-[#333333] flex justify-center items-center rounded-full'>
         <button

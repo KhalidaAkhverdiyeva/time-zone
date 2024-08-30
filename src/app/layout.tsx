@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
-import Footer from "../components/Footer";
 import ClientNavbar from "@/helpers/LoginNavbarNull";
+import type { Metadata } from "next";
 import ClientFooter from "@/helpers/LoginFooterNull";
+import React, { Suspense } from "react";
+import Loading from "./loading";
 
-const josefinSans = Josefin_Sans({ 
+const josefinSans = Josefin_Sans({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"]
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -17,15 +18,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body className={josefinSans.className}>
-       <ClientNavbar/>
-        {children}
-        <ClientFooter/>
+        <Suspense fallback={<Loading />}>
+          <ClientNavbar />
+          {children}
+          <ClientFooter />
+        </Suspense>
       </body>
     </html>
   );
