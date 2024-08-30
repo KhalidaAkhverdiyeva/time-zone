@@ -12,8 +12,8 @@ export default function Home() {
     console.log("Effect running");
     const timeout = setTimeout(() => {
       console.log("Redirecting");
-      setLoading(false); // Hide spinner
-      router.push("/timezone/home"); // Perform the redirect
+      setLoading(false);
+      router.push("/timezone/home");
     }, 3000);
 
     return () => {
@@ -23,9 +23,8 @@ export default function Home() {
   }, [router]);
 
   if (loading) {
-    return <Spinner />; // Show spinner during the delay
+    return <Spinner />;
   }
 
-  // After redirect, this component should not render anything
   return null;
 }

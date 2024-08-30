@@ -42,13 +42,17 @@ const HeroSection = () => {
   }, [controls]);
 
   return (
-    <div className="bg-[#F0F0F2] overflow-hidden">
+    <div className="bg-[#F0F0F2]  overflow-hidden">
       <div className=" w-full max-w-[1170px] mx-auto flex justify-between items-center">
         <div className="w-[64%]">
           <HeroSecText key={textKey} />
         </div>
 
-        <motion.div className="mr-[-25px]" animate={controls}>
+        <motion.div
+          className="mr-[-25px]"
+          animate={controls}
+          style={{ zIndex: "50" }}
+        >
           <img
             src="https://preview.colorlib.com/theme/timezone/assets/img/hero/watch.png.webp"
             alt="Watch"
