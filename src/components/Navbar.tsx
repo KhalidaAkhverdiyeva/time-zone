@@ -105,7 +105,7 @@ const Navbar = () => {
               <DropdownMenu items={itemsPages} />
             </li>
             <li className="py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500">
-              <Link href="">Contact</Link>
+              <Link href="/timezone/contact">Contact</Link>
             </li>
           </ul>
         </nav>

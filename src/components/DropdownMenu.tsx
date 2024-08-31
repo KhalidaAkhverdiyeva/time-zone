@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 
 interface DropdownMenuProps {
   items: { href: string; text: string }[];
@@ -19,7 +19,10 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ items }) => {
             {item.text}
           </a>
         ))}
-        <div className="absolute left-[20%] top-[-17px] w-0 h-0 border-[8px] border-t-transparent border-b-white border-l-transparent border-r-transparent transform -translate-x-1/2" style={{ borderBottomColor: '#ff2020' }}></div>
+        <div
+          className="absolute left-[20%] top-[-17px] w-0 h-0 border-[8px] border-t-transparent border-b-white border-l-transparent border-r-transparent transform -translate-x-1/2"
+          style={{ borderBottomColor: "#ff2020" }}
+        ></div>
       </div>
     </div>
   );
