@@ -28,11 +28,11 @@ export default function RootLayout({
         />
       </head>
       <body className={josefinSans.className}>
-        <Suspense fallback={<Loading />}>
-          <ClientNavbar />
-          {children}
-          <ClientFooter />
-        </Suspense>
+        {/* <Suspense fallback={<Loading />}> */}
+        <ClientNavbar />
+        {children}
+        <ClientFooter />
+        {/* </Suspense> */}
       </body>
     </html>
   );

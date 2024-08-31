@@ -15,7 +15,6 @@ const page = () => {
       <div className="w-full max-w-[1170px] mx-auto flex gap-[30px]">
         <div className="w-[64%] mb-[200px]">
           <BlogCard />
-          <BlogCard />
         </div>
         <div className=" w-[36%]">
           <BlogSearch />
