@@ -1,6 +1,6 @@
 import React from "react";
 
-const WatchShop = () => {
+const AboutHero = () => {
   return (
     <div className="relative  flex justify-center items-center mb-[200px]">
       <h2 className="absolute  text-[70px] text-[#0b1c39] font-[700]">
@@ -14,4 +14,4 @@ const WatchShop = () => {
   );
 };
 
-export default WatchShop;
+export default AboutHero;

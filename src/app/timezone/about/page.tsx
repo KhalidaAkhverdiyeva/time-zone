@@ -1,12 +1,12 @@
+import AboutHero from "@/components/AboutHero";
 import MissionAbout from "@/components/MissionAbout";
 import OrangeBox from "@/components/OrangeBox";
-import WatchShop from "@/components/WatchShop";
 import React from "react";
 
 const About = () => {
   return (
     <div>
-      <WatchShop />
+      <AboutHero />
       <MissionAbout />
       <OrangeBox />
     </div>

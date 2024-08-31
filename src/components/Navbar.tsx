@@ -9,7 +9,7 @@ import SearchModal from "./SearchModal";
 import Link from "next/link";
 
 const itemsLatest = [
-  { href: "/timezone/product_details", text: "Product List" },
+  { href: "/timezone/shop", text: "Product List" },
   { href: "/timezone/product_details", text: "Product Details" },
 ];
 const itemsBlog = [
@@ -97,7 +97,7 @@ const Navbar = () => {
               </span>
             </li>
             <li className=" relative py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500 group">
-              <Link href="">Blog</Link>
+              <Link href="/timezone/blog">Blog</Link>
               <DropdownMenu items={itemsBlog} />
             </li>
             <li className="relative py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500 group">

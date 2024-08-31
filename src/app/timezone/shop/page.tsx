@@ -1,10 +1,15 @@
+import OrangeBox from "@/components/OrangeBox";
+import PopularItemSection from "@/components/PopularItemSection";
+import WatchShop from "@/components/WatchShop";
+
 const Shop = () => {
-    return (
-      <div>
-        <h1>Shop Page</h1>
-        <p>Welcome to the shop page!</p>
-      </div>
-    );
-  };
-  
-  export default Shop;
+  return (
+    <div>
+      <WatchShop />
+      <PopularItemSection />
+      <OrangeBox />
+    </div>
+  );
+};
+
+export default Shop;

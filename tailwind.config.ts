@@ -10,6 +10,10 @@ const config: Config = {
     extend: {
       boxShadow: {
         custom: '0 10px 15px rgba(25, 25, 25, 0.1)',
+        blogShadow: '0px 10px 20px 0px rgba(221, 221, 221, 0.3)',
+      },
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
       },
       keyframes: {
         slideIn: {
