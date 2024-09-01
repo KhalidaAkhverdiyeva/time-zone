@@ -110,7 +110,7 @@ const Navbar = () => {
           </ul>
         </nav>
       </div>
-      <div className="flex  ">
+      <div className="flex">
         <div
           onClick={openModal}
           className="py-[31px] px-[19px] text-[20px] hover:text-[#FF1D20] transition-colors duration-500 cursor-pointer"

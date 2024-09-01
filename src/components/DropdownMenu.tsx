@@ -8,8 +8,8 @@ interface DropdownMenuProps {
 
 const DropdownMenu: React.FC<DropdownMenuProps> = ({ items }) => {
   return (
-    <div className="relative">
-      <div className="absolute left-[-20px] top-[38px] mt-1 w-[170px] bg-white border-t-solid border-t-[3px] border-t-[#ff2020] border-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+    <div className="relative group">
+      <div className="absolute left-[-20px] top-[38px] mt-1 w-[170px] bg-white border-t-solid border-t-[3px] border-t-[#ff2020] border-gray-200 rounded-md shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-300">
         {items.map((item, index) => (
           <a
             key={index}

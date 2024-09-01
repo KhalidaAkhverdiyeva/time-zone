@@ -1,9 +1,14 @@
-import React from 'react'
+import MySlider from "@/components/MySlider";
+import WatchShop from "@/components/WatchShop";
+import React from "react";
 
 const Details = () => {
   return (
-    <div>Details</div>
-  )
-}
+    <div>
+      <WatchShop />
+      <MySlider />
+    </div>
+  );
+};
 
-export default Details
+export default Details;
