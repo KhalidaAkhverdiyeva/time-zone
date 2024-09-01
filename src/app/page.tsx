@@ -23,7 +23,8 @@ export default function Home() {
   }, [router]);
 
   if (loading) {
-    return <Spinner />;
+    // return <Spinner />;
+    return null;
   }
 
   return null;

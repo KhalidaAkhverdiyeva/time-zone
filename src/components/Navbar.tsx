@@ -14,7 +14,7 @@ const itemsLatest = [
 ];
 const itemsBlog = [
   { href: "/timezone/blog", text: "Blog" },
-  { href: "/timezone/blog_details", text: "Blog Details" },
+  { href: "/timezone/blog", text: "Blog Details" },
 ];
 const itemsPages = [
   { href: "/timezone/blog", text: "Cart" },

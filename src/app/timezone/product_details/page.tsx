@@ -6,7 +6,7 @@ const Details = () => {
   return (
     <div>
       <WatchShop />
-      <MySlider />
+      {/* <MySlider /> */}
     </div>
   );
 };
