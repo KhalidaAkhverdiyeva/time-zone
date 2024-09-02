@@ -2,7 +2,7 @@ import React from "react";
 
 const MosaicSection = () => {
   return (
-    <div className="flex gap-[30px] mb-[200px]">
+    <div className="flex gap-[30px] mb-[50px] md:mb-[200px] flex-wrap md:flex-nowrap">
       <div className="relative overflow-hidden group">
         <img
           className="transform transition-transform duration-700 scale-105 group-hover:scale-100 object-cover "

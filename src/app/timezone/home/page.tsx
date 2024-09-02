@@ -11,14 +11,13 @@ import ChoiceSection from "../../../components/ChoiceSection";
 export default function Home() {
   return (
     <>
-    <HeroSection/>
-    <NewArrivals/>
-    <MosaicSection/>
-    <PopularItemSection/>
-    <VideoSection/>
-    <ChoiceSection/>
-    <OrangeBox/>
+      <HeroSection />
+      <NewArrivals />
+      <MosaicSection />
+      <PopularItemSection />
+      <VideoSection />
+      <ChoiceSection />
+      <OrangeBox />
     </>
-    
   );
 }

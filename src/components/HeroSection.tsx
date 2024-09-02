@@ -44,12 +44,12 @@ const HeroSection = () => {
   return (
     <div className="bg-[#F0F0F2]  overflow-hidden">
       <div className=" w-full max-w-[1170px] mx-auto flex justify-between items-center">
-        <div className="w-[64%]">
+        <div className="w-[100%] md:w-[64%]">
           <HeroSecText key={textKey} />
         </div>
 
         <motion.div
-          className="mr-[-25px]"
+          className="hidden  md:mr-[-25px] md:block "
           animate={controls}
           style={{ zIndex: "50" }}
         >

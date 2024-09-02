@@ -21,7 +21,7 @@ const PopularItemSection = () => {
   return (
     <div className="w-full max-w-[1170px] mx-auto flex flex-col justify-center items-center mb-[200px]">
       <PopularHeadline />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-[100%]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] w-[100%] px-[15px] md:px-[0px]">
         <PopularWatchCard
           id={1}
           img="https://preview.colorlib.com/theme/timezone/assets/img/gallery/popular1.png"

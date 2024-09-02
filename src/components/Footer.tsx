@@ -7,9 +7,9 @@ import { LiaBehance } from "react-icons/lia";
 
 const Footer = () => {
   return (
-    <div className="w-full max-w-[1170px] mx-auto mb-[100px] ">
-      <div className="flex mb-[100px]">
-        <div className="w-[25%]">
+    <div className="w-full max-w-[1170px] mx-auto mb-[100px] px-[15px] md:px-[0px] ">
+      <div className="flex flex-col md:flex-row mb-[50px] md:mb-[100px] gap-[20px] md:gap-[0px]">
+        <div className="md:w-[25%] w-[100%] ">
           <img
             className="mb-[40px]"
             src="https://preview.colorlib.com/theme/timezone/assets/img/logo/logo2_footer.png"
@@ -20,8 +20,10 @@ const Footer = () => {
             do eiusmod tem.
           </p>
         </div>
-        <div className="w-[25%]">
-          <h4 className=" font-[700] text-[20px] mb-[40px]">Quick Links</h4>
+        <div className="md:w-[25%] w-[100%]">
+          <h4 className=" font-[700] text-[20px] mb-[10px] md:mb-[40px]">
+            Quick Links
+          </h4>
           <ul className="text-[#868c98] font-[300] space-y-[10px] ">
             <li className="cursor-pointer transition-transform duration-300 hover:translate-x-2 hover:text-[#FF2020]">
               About
@@ -37,8 +39,10 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="w-[25%]">
-          <h4 className=" font-[700] text-[20px] mb-[40px]">New Products</h4>
+        <div className="md:w-[25%] w-[100%]">
+          <h4 className=" font-[700] text-[20px] mb-[10px] md:mb-[40px]">
+            New Products
+          </h4>
           <ul className="text-[#868c98] font-[300] space-y-[10px]">
             <li className="cursor-pointer transition-transform duration-300 hover:translate-x-2 hover:text-[#FF2020]">
               Woman Cloth
@@ -54,8 +58,10 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="w-[25%]">
-          <h4 className=" font-[700] text-[20px] mb-[40px]">Support</h4>
+        <div className="md:w-[25%] w-[100%]">
+          <h4 className=" font-[700] text-[20px] mb-[10px] md:mb-[40px]">
+            Support
+          </h4>
           <ul className="text-[#868c98] font-[300] space-y-[10px]">
             <li className="cursor-pointer transition-transform duration-300 hover:translate-x-2 hover:text-[#FF2020]">
               Frequently Asked Questions
@@ -72,7 +78,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="flex justify-between">
+      <div className="flex flex-col gap-[20px] md:flex-row md:gap-0 justify-between">
         <div className="flex items-center gap-[5px]">
           <span className="text-[#888]">
             Copyright ©2024 All rights reserved | This template is made with
