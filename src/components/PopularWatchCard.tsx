@@ -7,7 +7,13 @@ interface WatchCardProp {
   id: number;
   img: string;
   price: number;
-  onAddToCart: (item: { id: number; img: string; price: number }) => void;
+  name: string;
+  onAddToCart: (item: {
+    id: number;
+    img: string;
+    price: number;
+    name: string;
+  }) => void;
   onRemoveFromCart: (id: number) => void;
 }
 
@@ -15,6 +21,7 @@ const PopularWatchCard: FC<WatchCardProp> = ({
   id,
   img,
   price,
+  name,
   onAddToCart,
   onRemoveFromCart,
 }) => {
@@ -30,7 +37,7 @@ const PopularWatchCard: FC<WatchCardProp> = ({
     if (isAdded) {
       onRemoveFromCart(id);
     } else {
-      onAddToCart({ id, img, price });
+      onAddToCart({ id, img, price, name });
     }
   };
 
@@ -70,7 +77,7 @@ const PopularWatchCard: FC<WatchCardProp> = ({
       </div>
       <div>
         <p className="text-[24px] font-[700] text-center text-[#444444]">
-          Thermo Ball Etip Gloves
+          {name}
         </p>
       </div>
       <div>

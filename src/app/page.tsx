@@ -1,31 +1,29 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Spinner from "@/components/loading";
+import { useAuth } from "@/hooks/useAuth";
 
-export default function Home() {
-  const [loading, setLoading] = useState(true);
+const Home: React.FC = () => {
+  const { user, loading } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
-    console.log("Effect running");
-    const timeout = setTimeout(() => {
-      console.log("Redirecting");
-      setLoading(false);
-      router.push("/timezone/home");
-    }, 3000);
-
-    return () => {
-      console.log("Cleaning up");
-      clearTimeout(timeout);
-    };
-  }, [router]);
+    if (!loading) {
+      if (user) {
+        router.push("/timezone/home");
+      } else {
+        router.push("/login");
+      }
+    }
+  }, [user, loading, router]);
 
   if (loading) {
-    // return <Spinner />;
-    return null;
+    return <Spinner />;
   }
 
   return null;
-}
+};
+
+export default Home;

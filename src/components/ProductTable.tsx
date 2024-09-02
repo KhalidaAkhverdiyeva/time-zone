@@ -27,6 +27,14 @@ const ProductTable = () => {
     localStorage.setItem("cartItems", JSON.stringify(updatedProducts));
   };
 
+  const getTotalPrice = () => {
+    return products.reduce(
+      (total, product) =>
+        total + calculateTotal(product.price, product.quantity),
+      0
+    );
+  };
+
   return (
     <div className="w-full max-w-[1170px] mx-auto mb-[200px]">
       <table className="w-full border-collapse">
@@ -56,7 +64,7 @@ const ProductTable = () => {
                 <img
                   src={product.img}
                   alt=""
-                  className="w-[150px] h-[150px] mr-2"
+                  className="w-[150px] h-[150px] mr-[20px]"
                 />
                 {product.name}
               </td>
@@ -95,6 +103,20 @@ const ProductTable = () => {
             </tr>
           ))}
         </tbody>
+        <tfoot className="my-[20px]">
+          <tr className="border-t border-t-gray-300 ">
+            <td
+              colSpan={5}
+              className="p-2 text-right my-[20px] text-[20px] font-[300]"
+            >
+              Subtotal:
+            </td>
+            <td className="p-2 text-[#415094] text-[16px] font-[500] my-[20px]">
+              ${getTotalPrice().toFixed(2)}
+            </td>
+            <td></td>
+          </tr>
+        </tfoot>
       </table>
     </div>
   );

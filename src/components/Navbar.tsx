@@ -1,12 +1,11 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { BsSearch } from "react-icons/bs";
+import React, { useState, useEffect } from "react";
+import { BsSearch, BsCart3 } from "react-icons/bs";
 import { GoPerson } from "react-icons/go";
-import { BsCart3 } from "react-icons/bs";
 import { usePathname } from "next/navigation";
 import DropdownMenu from "./DropdownMenu";
 import SearchModal from "./SearchModal";
 import Link from "next/link";
+import SignOutModal from "./SignOutModal";
 
 const itemsLatest = [
   { href: "/timezone/shop", text: "Product List" },
@@ -25,13 +24,15 @@ const itemsPages = [
 
 const Navbar = () => {
   const pathname = usePathname();
-
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSignOutModalOpen, setIsSignOutModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
+  const toggleSignOutModal = () => setIsSignOutModalOpen((prev) => !prev);
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
@@ -59,7 +60,7 @@ const Navbar = () => {
       <div className="cursor-pointer">
         <img
           src="https://preview.colorlib.com/theme/timezone/assets/img/logo/logo.png.webp"
-          alt="lo"
+          alt="logo"
         />
       </div>
       <div>
@@ -118,12 +119,18 @@ const Navbar = () => {
           <BsSearch />
         </div>
         <SearchModal isOpen={isModalOpen} onClose={closeModal} />
-        <div className="py-[31px] px-[19px] text-[20px] hover:text-[#FF1D20] transition-colors duration-500 cursor-pointer">
-          <GoPerson />
+        <div className="relative py-[31px] px-[19px] text-[20px] hover:text-[#FF1D20] transition-colors duration-500 cursor-pointer">
+          <GoPerson onClick={toggleSignOutModal} />
+          <SignOutModal
+            isOpen={isSignOutModalOpen}
+            onClose={toggleSignOutModal}
+          />
         </div>
-        <div className="py-[31px] px-[19px] text-[20px] hover:text-[#FF1D20] transition-colors duration-500 cursor-pointer">
-          <BsCart3 />
-        </div>
+        <a href="/timezone/cart">
+          <div className="py-[31px] px-[19px] text-[20px] hover:text-[#FF1D20] transition-colors duration-500 cursor-pointer">
+            <BsCart3 />
+          </div>
+        </a>
       </div>
     </div>
   );

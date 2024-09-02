@@ -28,6 +28,7 @@ const PopularItemSection = () => {
           price={250}
           onAddToCart={addToCart}
           onRemoveFromCart={removeFromCart}
+          name="Submariner"
         />
         <PopularWatchCard
           id={2}
@@ -35,6 +36,7 @@ const PopularItemSection = () => {
           price={325}
           onAddToCart={addToCart}
           onRemoveFromCart={removeFromCart}
+          name="Daytona"
         />
         <PopularWatchCard
           id={3}
@@ -42,6 +44,7 @@ const PopularItemSection = () => {
           price={544}
           onAddToCart={addToCart}
           onRemoveFromCart={removeFromCart}
+          name="Explorer "
         />
         <PopularWatchCard
           id={4}
@@ -49,6 +52,7 @@ const PopularItemSection = () => {
           price={170}
           onAddToCart={addToCart}
           onRemoveFromCart={removeFromCart}
+          name="GMT-Master II"
         />
         <PopularWatchCard
           id={5}
@@ -56,6 +60,7 @@ const PopularItemSection = () => {
           price={1000}
           onAddToCart={addToCart}
           onRemoveFromCart={removeFromCart}
+          name="Yacht-Master"
         />
         <PopularWatchCard
           id={6}
@@ -63,6 +68,7 @@ const PopularItemSection = () => {
           price={167}
           onAddToCart={addToCart}
           onRemoveFromCart={removeFromCart}
+          name="Milgauss"
         />
       </div>
       <button className="relative py-[20px] px-[25px] text-white bg-[#FF2020]  font-[600] overflow-hidden group mt-[100px]">
