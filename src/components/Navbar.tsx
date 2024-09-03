@@ -14,7 +14,7 @@ const itemsLatest = [
 ];
 const itemsBlog = [
   { href: "/timezone/blog", text: "Blog" },
-  { href: "/timezone/blog", text: "Blog Details" },
+  { href: "/timezone/blog_details", text: "Blog Details" },
 ];
 const itemsPages = [
   { href: "/timezone/cart", text: "Cart" },
@@ -30,6 +30,7 @@ const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSignOutModalOpen, setIsSignOutModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState("");
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -54,6 +55,12 @@ const Navbar = () => {
   }, [lastScrollTop]);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
+  const handleDropdownToggle = (dropdown: any) => {
+    setOpenDropdown(openDropdown === dropdown ? "" : dropdown);
+  };
 
   return (
     <div
@@ -95,7 +102,7 @@ const Navbar = () => {
               <Link href="/timezone/about">About</Link>
             </li>
             <li className="relative py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500 group">
-              <Link href="">Latest</Link>
+              <Link href="#">Latest</Link>
               <DropdownMenu items={itemsLatest} />
               <span
                 style={{ boxShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
@@ -109,7 +116,7 @@ const Navbar = () => {
               <DropdownMenu items={itemsBlog} />
             </li>
             <li className="relative py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500 group">
-              <Link href="">Pages</Link>
+              <Link href="#">Pages</Link>
               <DropdownMenu items={itemsPages} />
             </li>
             <li className="py-[41px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500">
@@ -151,52 +158,126 @@ const Navbar = () => {
 
       {/* Mobile Menu (ul) */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white z-[9998]">
-          <ul className="flex flex-col text-[#141517] font-[600]">
-            <li
-              className={`py-[15px] px-[21px] ${
-                pathname === "/timezone/home" ? "text-[#E3411A]" : "text-black"
-              } hover:text-[#FF1D20] transition-colors duration-500`}
-            >
-              <Link href="/timezone/home">Home</Link>
-            </li>
-            <li
-              className={`py-[15px] px-[21px] ${
-                pathname === "/timezone/shop" ? "text-[#E3411A]" : "text-black"
-              } hover:text-[#FF1D20] transition-colors duration-500`}
-            >
-              <Link href="/timezone/shop">Shop</Link>
-            </li>
-            <li
-              className={`py-[15px] px-[21px] ${
-                pathname === "/timezone/about" ? "text-[#E3411A]" : "text-black"
-              } hover:text-[#FF1D20] transition-colors duration-500`}
-            >
-              <Link href="/timezone/about">About</Link>
-            </li>
-            <li className="relative py-[15px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500 group">
-              <Link href="">Latest</Link>
-              <DropdownMenu items={itemsLatest} />
-              <span
-                style={{ boxShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
-                className="absolute top-[10px] flex justify-center items-center right-[-13px] bg-[#FF003C] text-white text-[10px]  px-2 pt-1 rounded-[8px]"
+        <>
+          <div
+            onClick={closeMobileMenu}
+            className="fixed inset-0 bg-black bg-opacity-50 z-[9997]"
+          ></div>
+
+          <div className="absolute top-full left-0 w-full bg-white z-[9998] transition-transform duration-300 transform">
+            <ul className="flex flex-col text-[#141517] font-[600]">
+              <li
+                onClick={closeMobileMenu}
+                className={`py-[15px] px-[21px] ${
+                  pathname === "/timezone/home"
+                    ? "text-[#E3411A]"
+                    : "text-black"
+                } hover:text-[#FF1D20] transition-colors duration-500`}
               >
-                HOT
-              </span>
-            </li>
-            <li className=" relative py-[15px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500 group">
-              <Link href="/timezone/blog">Blog</Link>
-              <DropdownMenu items={itemsBlog} />
-            </li>
-            <li className="relative py-[15px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500 group">
-              <Link href="">Pages</Link>
-              <DropdownMenu items={itemsPages} />
-            </li>
-            <li className="py-[15px] px-[21px] hover:text-[#FF1D20] transition-colors duration-500">
-              <Link href="/timezone/contact">Contact</Link>
-            </li>
-          </ul>
-        </div>
+                <Link href="/timezone/home">Home</Link>
+              </li>
+              <li
+                onClick={closeMobileMenu}
+                className={`py-[15px] px-[21px] ${
+                  pathname === "/timezone/shop"
+                    ? "text-[#E3411A]"
+                    : "text-black"
+                } hover:text-[#FF1D20] transition-colors duration-500`}
+              >
+                <Link href="/timezone/shop">Shop</Link>
+              </li>
+              <li
+                onClick={closeMobileMenu}
+                className={`py-[15px] px-[21px] ${
+                  pathname === "/timezone/about"
+                    ? "text-[#E3411A]"
+                    : "text-black"
+                } hover:text-[#FF1D20] transition-colors duration-500`}
+              >
+                <Link href="/timezone/about">About</Link>
+              </li>
+              {/* Latest Dropdown */}
+              <li className="relative py-[15px] px-[21px]">
+                <button
+                  onClick={() => handleDropdownToggle("latest")}
+                  className="flex justify-between w-full hover:text-[#FF1D20] transition-colors duration-500"
+                >
+                  Latest
+                  <span>{openDropdown === "latest" ? "-" : "+"}</span>
+                </button>
+                {openDropdown === "latest" && (
+                  <ul className="pl-4 mt-2">
+                    {itemsLatest.map((item, index) => (
+                      <li
+                        key={index}
+                        onClick={closeMobileMenu}
+                        className="py-2"
+                      >
+                        <Link href={item.href}>{item.text}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+              {/* Blog Dropdown */}
+              <li className="relative py-[15px] px-[21px]">
+                <button
+                  onClick={() => handleDropdownToggle("blog")}
+                  className="flex justify-between w-full hover:text-[#FF1D20] transition-colors duration-500"
+                >
+                  Blog
+                  <span>{openDropdown === "blog" ? "-" : "+"}</span>
+                </button>
+                {openDropdown === "blog" && (
+                  <ul className="pl-4 mt-2">
+                    {itemsBlog.map((item, index) => (
+                      <li
+                        key={index}
+                        onClick={closeMobileMenu}
+                        className="py-2"
+                      >
+                        <Link href={item.href}>{item.text}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+              {/* Pages Dropdown */}
+              <li className="relative py-[15px] px-[21px]">
+                <button
+                  onClick={() => handleDropdownToggle("pages")}
+                  className="flex justify-between w-full hover:text-[#FF1D20] transition-colors duration-500"
+                >
+                  Pages
+                  <span>{openDropdown === "pages" ? "-" : "+"}</span>
+                </button>
+                {openDropdown === "pages" && (
+                  <ul className="pl-4 mt-2">
+                    {itemsPages.map((item, index) => (
+                      <li
+                        key={index}
+                        onClick={closeMobileMenu}
+                        className="py-2"
+                      >
+                        <Link href={item.href}>{item.text}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+              <li
+                onClick={closeMobileMenu}
+                className={`py-[15px] px-[21px] ${
+                  pathname === "/timezone/contact"
+                    ? "text-[#E3411A]"
+                    : "text-black"
+                } hover:text-[#FF1D20] transition-colors duration-500`}
+              >
+                <Link href="/timezone/contact">Contact</Link>
+              </li>
+            </ul>
+          </div>
+        </>
       )}
     </div>
   );

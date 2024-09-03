@@ -76,8 +76,8 @@ const BlogCard = () => {
                 </span>
               </div>
             </div>
-            <div className="pt-[60px] pl-[35px] pr-[30px] pb-[35px]">
-              <h4 className="text-[#0b1c39] font-[600] text-[24px] mb-[15px]">
+            <div className="p-[20px] md:pt-[60px] md:pl-[35px] md:pr-[30px] md:pb-[35px]">
+              <h4 className="text-[#0b1c39] font-[600] md:text-[24px] mb-[15px]">
                 {post.title}
               </h4>
               <p className="text-[#777] leading-[30px] font-[300]">

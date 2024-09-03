@@ -1,6 +1,5 @@
-import React from 'react';
+import React from "react";
 import { IoCloseSharp } from "react-icons/io5";
-
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -12,20 +11,20 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black h-[100vh]  flex justify-center items-center z-9999">
-      <div className="bg-transparent p-6 rounded-lg relative ">
-        <div className='absolute top-[-230px] left-[230px] w-[70px] h-[70px] bg-[#333333] flex justify-center items-center rounded-full'>
-        <button
-          onClick={onClose}
-          className=" text-[40px] text-white "
-        >
-          <IoCloseSharp />
-        </button>
+      <div className="bg-transparent p-6 rounded-lg relative w-[250px]  md:w-[100%]  ">
+        <div className="absolute md:top-[-230px] top-[-130px] left-[130px] md:left-[230px] w-[40px] h-[40px] md:w-[70px] md:h-[70px] bg-[#333333] flex justify-center items-center rounded-full">
+          <button
+            onClick={onClose}
+            className=" text-[26px] md:text-[40px] text-white "
+          >
+            <IoCloseSharp />
+          </button>
         </div>
-       
+
         <input
           type="text"
           placeholder="Searching key..."
-          className="w-[500px] bg-transparent focus:outline-none  py-2 text-[#999]   border-b-solid border-b-[2px] border-b-[#dccccc] text-[40px] "
+          className="w-[250px] md:w-[500px] bg-transparent focus:outline-none  py-2 text-[#999]   border-b-solid border-b-[2px] border-b-[#dccccc] text-[26px] md:text-[40px]"
         />
       </div>
     </div>

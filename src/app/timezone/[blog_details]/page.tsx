@@ -11,7 +11,6 @@ import BlogIntaFeed from "@/components/BlogIntaFeed";
 import BlogNewsLatter from "@/components/BlogNewsLatter";
 import { IoMdHeart } from "react-icons/io";
 import { LiaBehance } from "react-icons/lia";
-import GetInTouch from "@/components/GetInTouch";
 
 interface Post {
   _id: string;
@@ -59,8 +58,8 @@ const BlogDetail = async ({ params }: { params: { blog_details: string } }) => {
     return (
       <div>
         <BlogDetailsHero />
-        <div className="w-full max-w-[1170px] mx-auto flex gap-[30px]">
-          <div className="w-[64%] mb-[50px] cursor-pointer">
+        <div className="w-full max-w-[1170px] mx-auto px-[15px] md:px-[0px] flex flex-col md:flex-row gap-[30px]">
+          <div className="md:w-[64%] mb-[50px] cursor-pointer">
             <div className="relative">
               <img src={post.image.asset.url} alt={post.title} />
             </div>
@@ -132,11 +131,11 @@ const BlogDetail = async ({ params }: { params: { blog_details: string } }) => {
                 className="w-[100%] border-[1px] border-solid border-[#e5e6e9] text-[13px] py-[6px] px-[12px] font-[300]  leading-[1.5] resize-none"
               ></textarea>
             </div>
-            <button className="text-white w-[15%] uppercase bg-[#FF2020] my-[20px] py-[12px] px-[25px] rounded-[5px]">
+            <button className="text-white  md:w-[15%] uppercase bg-[#FF2020] my-[20px] py-[12px] px-[25px] rounded-[5px]">
               send
             </button>
           </div>
-          <div className="w-[36%]">
+          <div className="md:w-[36%]">
             <BlogSearch />
             <BlogCategory />
             <BlogRecents />

@@ -12,11 +12,11 @@ const page = () => {
   return (
     <div>
       <BlogHero />
-      <div className="w-full max-w-[1170px] mx-auto flex gap-[30px]">
-        <div className="w-[64%] mb-[200px]">
+      <div className="w-full max-w-[1170px] mx-auto flex flex-col md:flex-row  px-[15px] md:px-[0px] gap-[30px]">
+        <div className=" md:w-[64%] mb-[30px] md:mb-[200px]">
           <BlogCard />
         </div>
-        <div className=" w-[36%]">
+        <div className=" md:w-[36%]">
           <BlogSearch />
           <BlogCategory />
           <BlogRecents />
