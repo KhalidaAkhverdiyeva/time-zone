@@ -6,11 +6,7 @@ import { initFirebaseAdmin } from '../timeoclock/firebaseAdminConfig';
 initFirebaseAdmin();
 
 export async function middleware(request: NextRequest) {
-  
-  console.log('Middleware is running');
-  
   const { pathname } = request.nextUrl;
-  console.log('Middleware executed for:', pathname);
 
   const protectedRoutes = ['/timezone/home', '/timezone/shop', '/profile'];
 
@@ -23,13 +19,11 @@ export async function middleware(request: NextRequest) {
     const token = tokenCookie ? tokenCookie.value : null;
 
     if (!token) {
-      console.log('No token found, redirecting to /login');
       return NextResponse.redirect(new URL('/login', request.url));
     }
 
     try {
       await getAuth().verifyIdToken(token);
-      console.log('Token verification successful');
       return NextResponse.next();
     } catch (error) {
       console.error('Token verification failed:', error);

@@ -3,20 +3,6 @@ import React, { FC, useState, useEffect } from "react";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { FaHeart } from "react-icons/fa";
 
-interface WatchCardProp {
-  id: number;
-  img: string;
-  price: number;
-  name: string;
-  onAddToCart: (item: {
-    id: number;
-    img: string;
-    price: number;
-    name: string;
-  }) => void;
-  onRemoveFromCart: (id: number) => void;
-}
-
 const PopularWatchCard: FC<WatchCardProp> = ({
   id,
   img,

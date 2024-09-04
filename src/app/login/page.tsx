@@ -5,14 +5,7 @@ import { useRouter } from "next/navigation";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "../../../firebaseConfig";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-
-const validationSchema = Yup.object({
-  email: Yup.string()
-    .email("Invalid email format")
-    .required("Email is required"),
-  password: Yup.string().required("Password is required"),
-});
+import validationSchema from "@/helpers/LoginValidationSchema";
 
 const Login: React.FC = () => {
   const router = useRouter();
