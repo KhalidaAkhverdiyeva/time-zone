@@ -18,6 +18,8 @@ const SignOutModal: React.FC<SignOutModalProps> = ({ isOpen, onClose }) => {
   const handleSignOut = async () => {
     try {
       await signOut(auth);
+      document.cookie =
+        "authToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
       router.push("/login");
       onClose();
     } catch (error) {

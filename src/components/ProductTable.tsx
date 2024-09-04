@@ -93,7 +93,7 @@ const ProductTable = () => {
           ))}
         </tbody>
         <tfoot className="my-[20px]">
-          <tr className="border-t border-t-gray-300 hidden md:block ">
+          <tr className="border-t border-t-gray-300 hidden  ">
             <td
               colSpan={5}
               className="p-2 text-right my-[20px] text-[20px] font-[300]"

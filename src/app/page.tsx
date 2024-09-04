@@ -10,9 +10,6 @@ const Home: React.FC = () => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log("Loading:", loading);
-    console.log("User:", user);
-
     if (!loading) {
       if (user) {
         console.log("Redirecting to /timezone/home");

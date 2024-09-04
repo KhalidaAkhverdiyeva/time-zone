@@ -1,28 +1,34 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "next/navigation";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "../../../firebaseConfig";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+
+const validationSchema = Yup.object({
+  email: Yup.string()
+    .email("Invalid email format")
+    .required("Email is required"),
+  password: Yup.string().required("Password is required"),
+});
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
   const auth = getAuth(app);
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
+  const handleLogin = async (
+    values: { email: string; password: string },
+    { setSubmitting, setErrors }: any
+  ) => {
+    setSubmitting(true);
 
     try {
       const userCredential = await signInWithEmailAndPassword(
         auth,
-        email,
-        password
+        values.email,
+        values.password
       );
       const user = userCredential.user;
       const token = await user.getIdToken();
@@ -39,15 +45,15 @@ const Login: React.FC = () => {
       } else if (error.code === "auth/wrong-password") {
         errorMessage = "Incorrect password.";
       }
-      setError(errorMessage);
+      setErrors({ api: errorMessage });
     } finally {
-      setLoading(false);
+      setSubmitting(false);
     }
   };
 
   return (
-    <div className="flex min-h-screen justify-center items-center bg-gray-100">
-      <div className=" w-[500px] h-[500px] border   flex flex-col items-center justify-center bg-[#7E5F7B]">
+    <div className="flex min-h-screen justify-center p-[15px] flex-col md:flex-row md:p-[0px] items-center bg-gray-100">
+      <div className="w-[400px] md:w-[500px] h-[500px] border flex flex-col items-center justify-center bg-[#7E5F7B]">
         <div className="max-w-md text-center p-8 flex flex-col gap-[50px]">
           <h2 className="text-[32px] font-bold text-white">New to our Shop?</h2>
           <p className="text-[18px] text-white">
@@ -62,49 +68,65 @@ const Login: React.FC = () => {
           </a>
         </div>
       </div>
-      <div className=" w-[500px] h-[500px] border bg-white flex items-center justify-center">
+      <div className="w-[400px] md:w-[500px] h-[500px] border bg-white flex items-center justify-center">
         <div className="w-full max-w-md p-8 bg-white rounded flex flex-col gap-[40px] ">
-          <h2 className="text-[32px] font-bold text-center ">Welcome Back!</h2>
-          <form onSubmit={handleLogin} className=" flex flex-col gap-[30px]">
-            <div className="border-b border-gray-300 pb-2">
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
-                className="block w-full  py-1 border-none focus:outline-none "
-              />
-            </div>
-            <div className="border-b border-gray-300 pb-2">
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                value={password}
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-                className="block w-full  py-1 border-none focus:outline-none"
-              />
-            </div>
-            {error && <p className="text-sm text-red-500">{error}</p>}
-            <div>
-              <button
-                type="submit"
-                className={`w-full px-4 py-2 text-[18px] font-medium text-blue-700 border-blue-700 border-solid border-[1px] rounded-md transition-colors duration-300 ease-in-out ${
-                  loading ? "opacity-50 cursor-not-allowed" : ""
-                } hover:bg-blue-700 hover:text-white`}
-                disabled={loading}
-              >
-                {loading ? "Logging in..." : "Login"}
-              </button>
-            </div>
-          </form>
+          <h2 className="text-[32px] font-bold text-center">Welcome Back!</h2>
+          <Formik
+            initialValues={{ email: "", password: "" }}
+            validationSchema={validationSchema}
+            onSubmit={handleLogin}
+          >
+            {({ isSubmitting }) => (
+              <Form className="flex flex-col gap-[30px]">
+                <div className=" pb-2">
+                  <Field
+                    id="email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    placeholder="Email"
+                    className="block w-full py-1 border-b  border-gray-300 focus:outline-none"
+                  />
+                  <ErrorMessage
+                    name="email"
+                    component="p"
+                    className="text-sm my-2 text-red-500"
+                  />
+                </div>
+                <div className=" pb-2">
+                  <Field
+                    id="password"
+                    name="password"
+                    type="password"
+                    autoComplete="current-password"
+                    placeholder="Password"
+                    className="block w-full py-1 border-b border-gray-300 focus:outline-none"
+                  />
+                  <ErrorMessage
+                    name="password"
+                    component="p"
+                    className="text-sm text-red-500 my-2"
+                  />
+                </div>
+                <ErrorMessage
+                  name="api"
+                  component="p"
+                  className="text-sm text-red-500"
+                />
+                <div>
+                  <button
+                    type="submit"
+                    className={`w-full px-4 py-2 text-[18px] font-medium text-blue-700 border-blue-700 border-solid border-[1px] rounded-md transition-colors duration-300 ease-in-out ${
+                      isSubmitting ? "opacity-50 cursor-not-allowed" : ""
+                    } hover:bg-blue-700 hover:text-white`}
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Logging in..." : "Login"}
+                  </button>
+                </div>
+              </Form>
+            )}
+          </Formik>
         </div>
       </div>
     </div>
