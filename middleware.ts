@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { getAuth } from 'firebase-admin/auth';
-import { initFirebaseAdmin } from '../timeoclock/firebaseAdminConfig';
+import { initFirebaseAdmin } from './firebaseAdminConfig';
 
 initFirebaseAdmin();
 
