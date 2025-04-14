@@ -3,8 +3,7 @@ import "./globals.css";
 import ClientNavbar from "@/helpers/LoginNavbarNull";
 import type { Metadata } from "next";
 import ClientFooter from "@/helpers/LoginFooterNull";
-import React, { Suspense } from "react";
-import Link from "next/link";
+import React from "react";
 
 const josefinSans = Josefin_Sans({
   subsets: ["latin"],
@@ -22,17 +21,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Link
+        <link
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
           rel="stylesheet"
         />
       </head>
       <body className={josefinSans.className}>
-        {/* <Suspense fallback={<Loading />}> */}
         <ClientNavbar />
         {children}
         <ClientFooter />
-        {/* </Suspense> */}
       </body>
     </html>
   );

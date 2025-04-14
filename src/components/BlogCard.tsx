@@ -64,7 +64,7 @@ const BlogCard = () => {
         <Link key={post._id} href={`/timezone/${slugify(post.title)}`}>
           <div className="shadow-blogShadow mb-[50px] cursor-pointer">
             <div className="relative">
-              <Image src={post.image.asset.url} alt={post.title} width={500} height={500} />
+              <Image src={post.image.asset.url} alt={post.title} width={750} height={375} />
               <div className="absolute flex flex-col rounded-[5px] bottom-[-20px] left-[40px] bg-[#ff2020] text-white py-[13px] px-[30px]">
                 <span className="text-[30px]">
                   {new Date(post.date).getDate()}

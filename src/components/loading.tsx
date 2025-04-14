@@ -9,8 +9,8 @@ const Spinner: React.FC = () => {
           src="https://preview.colorlib.com/theme/timezone/assets/img/logo/logo.png.webp"
           alt="Logo"
           className="m-[10px]"
-          width={500}
-          height={500}
+          width={132}
+          height={24}
         />
 
         <div className="absolute w-full h-full border-[3px] border-t-orange-500 border-b-transparent border-l-transparent border-r-transparent rounded-full animate-spin"></div>

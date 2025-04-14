@@ -11,8 +11,8 @@ const BlogRecents = () => {
         <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_1.png.webp"
           alt=""
-          width={400}
-          height={500}
+          width={80}
+          height={80}
         />
         <div>
           <p className="text-[#0b1c39] font-[500]">From life was you fish...</p>
@@ -23,8 +23,8 @@ const BlogRecents = () => {
         <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_2.png"
           alt=""
-          width={500}
-          height={500}
+          width={80}
+          height={80}
         />
         <div>
           <p className="text-[#0b1c39] font-[500]">The Amazing Huble</p>
@@ -35,8 +35,8 @@ const BlogRecents = () => {
         <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_3.png"
           alt=""
-          width={500}
-          height={500}
+          width={80}
+          height={80}
         />
         <div>
           <p className="text-[#0b1c39] font-[500]">Astronomy Or Astrology</p>
@@ -47,8 +47,8 @@ const BlogRecents = () => {
         <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_4.png"
           alt=""
-          width={500}
-          height={500}
+          width={80}
+          height={80}
         />
         <div>
           <p className="text-[#0b1c39] font-[500]">Asteroids telescope</p>

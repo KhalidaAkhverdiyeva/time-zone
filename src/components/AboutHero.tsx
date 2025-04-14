@@ -11,7 +11,7 @@ const AboutHero = () => {
         src="https://preview.colorlib.com/theme/timezone/assets/img/hero/about_hero.png.webp"
         alt=""
         className="md:w-[100%] h-[400px] md:h-[100%]"
-        width={500}
+        width={1080}
         height={500}
       />
     </div>

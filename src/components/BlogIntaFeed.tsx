@@ -9,41 +9,40 @@ const BlogIntaFeed = () => {
       </div>
       <div className="flex gap-[15px] flex-wrap">
         <Image
-
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_5.png"
           alt=""
-          width={500}
-          height={500}
+          width={90}
+          height={90}
         />
         <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_6.png.webp"
           alt=""
-          width={500}
-          height={500}
+          width={90}
+          height={90}
         />
         <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_7.png"
           alt=""
-          width={500}
-          height={500}
+          width={90}
+          height={90}
         />
         <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_8.png"
           alt=""
-          width={500}
-          height={500}
+          width={90}
+          height={90}
         />
         <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_9.png"
           alt=""
-          width={500}
-          height={500}
+          width={90}
+          height={90}
         />
         <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_10.png"
           alt=""
-          width={500}
-          height={500}
+          width={90}
+          height={90}
         />
       </div>
     </div>

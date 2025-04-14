@@ -15,8 +15,8 @@ const Footer = () => {
             className="mb-[40px]"
             src="https://preview.colorlib.com/theme/timezone/assets/img/logo/logo2_footer.png"
             alt="footerimg"
-            width={600}
-            height={600}
+            width={132}
+            height={24}
           />
           <p className="text-[#868c98] font-[300]">
             Asorem ipsum adipolor sdit amet, consectetur adipisicing elitcf sed

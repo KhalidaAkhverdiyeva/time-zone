@@ -74,8 +74,8 @@ const Navbar = () => {
         <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/logo/logo.png.webp"
           alt="logo"
-          width={600}
-          height={600}
+          width={132}
+          height={24}
         />
       </div>
 
