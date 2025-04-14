@@ -145,11 +145,11 @@ const Navbar = () => {
             onClose={toggleSignOutModal}
           />
         </div>
-        <a href="/timezone/cart">
+        <Link href="/timezone/cart">
           <div className="py-[31px] px-[19px] text-[20px] hover:text-[#FF1D20] transition-colors duration-500 cursor-pointer">
             <BsCart3 />
           </div>
-        </a>
+        </Link>
       </div>
 
       {/* Mobile Menu Icon */}
