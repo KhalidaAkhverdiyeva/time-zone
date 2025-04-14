@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const BlogRecents = () => {
@@ -7,9 +8,11 @@ const BlogRecents = () => {
         Recent Post
       </div>
       <div className="flex gap-[20px] items-center mb-[20px]">
-        <img
+        <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_1.png.webp"
           alt=""
+          width={400}
+          height={500}
         />
         <div>
           <p className="text-[#0b1c39] font-[500]">From life was you fish...</p>
@@ -17,9 +20,11 @@ const BlogRecents = () => {
         </div>
       </div>
       <div className="flex gap-[20px] items-center mb-[20px]">
-        <img
+        <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_2.png"
           alt=""
+          width={500}
+          height={500}
         />
         <div>
           <p className="text-[#0b1c39] font-[500]">The Amazing Huble</p>
@@ -27,9 +32,11 @@ const BlogRecents = () => {
         </div>
       </div>
       <div className="flex gap-[20px] items-center mb-[20px]">
-        <img
+        <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_3.png"
           alt=""
+          width={500}
+          height={500}
         />
         <div>
           <p className="text-[#0b1c39] font-[500]">Astronomy Or Astrology</p>
@@ -37,9 +44,11 @@ const BlogRecents = () => {
         </div>
       </div>
       <div className="flex gap-[20px] items-center">
-        <img
+        <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_4.png"
           alt=""
+          width={500}
+          height={500}
         />
         <div>
           <p className="text-[#0b1c39] font-[500]">Asteroids telescope</p>

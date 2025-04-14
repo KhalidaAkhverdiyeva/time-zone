@@ -2,6 +2,7 @@
 import React, { FC, useState, useEffect } from "react";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { FaHeart } from "react-icons/fa";
+import Image from "next/image";
 
 const PopularWatchCard: FC<WatchCardProp> = ({
   id,
@@ -33,10 +34,12 @@ const PopularWatchCard: FC<WatchCardProp> = ({
         className="relative overflow-hidden mb-[20px] group cursor-pointer"
         onClick={handleCardClick}
       >
-        <img
+        <Image
           className="border-b-solid border-b-[#ff2020] border-b-[3px] w-full"
           src={img}
-          alt=""
+          alt={img}
+          width={600}
+          height={600}
         />
         <div
           className={`absolute top-[10px] right-[10px] transition-opacity duration-300 ${

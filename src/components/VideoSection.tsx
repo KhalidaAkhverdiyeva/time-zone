@@ -1,11 +1,14 @@
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import PlayBtn from "./PlayBtn";
+import Image from "next/image";
 
 const VideoSection = () => {
   return (
     <div className="relative ">
-      <img
+      <Image
+      width={600}
+      height={600}
         style={{ maxWidth: "none" }}
         className="object-cover w-[100%] h-[400px] md:w-[100%] md:h-[100%]"
         src="https://preview.colorlib.com/theme/timezone/assets/img/gallery/sectin_bg1.png.webp"

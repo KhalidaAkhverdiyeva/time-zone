@@ -1,4 +1,3 @@
-// components/BlogCard.tsx
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -6,6 +5,7 @@ import { IoPersonSharp } from "react-icons/io5";
 import { FaComments } from "react-icons/fa6";
 import client from "../../sanity";
 import Skeleton from "./Skeleton";
+import Image from "next/image";
 
 interface Post {
   _id: string;
@@ -64,7 +64,7 @@ const BlogCard = () => {
         <Link key={post._id} href={`/timezone/${slugify(post.title)}`}>
           <div className="shadow-blogShadow mb-[50px] cursor-pointer">
             <div className="relative">
-              <img src={post.image.asset.url} alt={post.title} />
+              <Image src={post.image.asset.url} alt={post.title} width={500} height={500} />
               <div className="absolute flex flex-col rounded-[5px] bottom-[-20px] left-[40px] bg-[#ff2020] text-white py-[13px] px-[30px]">
                 <span className="text-[30px]">
                   {new Date(post.date).getDate()}

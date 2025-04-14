@@ -1,4 +1,5 @@
 import { log } from "console";
+import Image from "next/image";
 import React, { FC } from "react";
 interface CardImg {
   url: string;
@@ -23,7 +24,7 @@ const ChoiceCard: FC<CardImg> = ({ url }) => {
         </button>
       </div>
       <div className="md:w-[50%] w-[100%]">
-        <img src={url} alt="" />
+        <Image src={url} alt={url} width={500} height={500}  />
       </div>
     </div>
   );

@@ -36,6 +36,7 @@ const Register: React.FC = () => {
 
     try {
       await createUserWithEmailAndPassword(auth, values.email, values.password);
+      console.log("Registering:", values.email, values.password);
       router.push("/timezone/home");
     } catch (error) {
       setErrors({ api: "Registration failed. Please try again." });

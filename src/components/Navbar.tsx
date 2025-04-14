@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { BsSearch, BsCart3 } from "react-icons/bs";
 import { GoPerson } from "react-icons/go";
 import { usePathname } from "next/navigation";
@@ -7,6 +7,7 @@ import SearchModal from "./SearchModal";
 import Link from "next/link";
 import SignOutModal from "./SignOutModal";
 import { FaBars, FaTimes } from "react-icons/fa";
+import Image from "next/image";
 
 const itemsLatest = [
   { href: "/timezone/shop", text: "Product List" },
@@ -37,7 +38,7 @@ const Navbar = () => {
 
   const toggleSignOutModal = () => setIsSignOutModalOpen((prev) => !prev);
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     const scrollTop = window.scrollY;
     if (scrollTop > lastScrollTop) {
       setIsHeaderVisible(false);
@@ -45,14 +46,14 @@ const Navbar = () => {
       setIsHeaderVisible(true);
     }
     setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
-  };
+  }, [lastScrollTop]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollTop]);
+  }, [handleScroll]);
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
 
@@ -70,9 +71,11 @@ const Navbar = () => {
     >
       {/* Logo Section */}
       <div className="cursor-pointer">
-        <img
+        <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/logo/logo.png.webp"
           alt="logo"
+          width={600}
+          height={600}
         />
       </div>
 

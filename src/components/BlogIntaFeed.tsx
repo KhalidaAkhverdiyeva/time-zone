@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const BlogIntaFeed = () => {
@@ -7,29 +8,42 @@ const BlogIntaFeed = () => {
         Instagram Feeds
       </div>
       <div className="flex gap-[15px] flex-wrap">
-        <img
+        <Image
+
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_5.png"
           alt=""
+          width={500}
+          height={500}
         />
-        <img
+        <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_6.png.webp"
           alt=""
+          width={500}
+          height={500}
         />
-        <img
+        <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_7.png"
           alt=""
+          width={500}
+          height={500}
         />
-        <img
+        <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_8.png"
           alt=""
+          width={500}
+          height={500}
         />
-        <img
+        <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_9.png"
           alt=""
+          width={500}
+          height={500}
         />
-        <img
+        <Image
           src="https://preview.colorlib.com/theme/timezone/assets/img/post/post_10.png"
           alt=""
+          width={500}
+          height={500}
         />
       </div>
     </div>

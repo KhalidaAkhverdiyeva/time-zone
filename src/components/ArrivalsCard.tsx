@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 type ImgType = {
@@ -6,7 +7,7 @@ type ImgType = {
 const ArrivalsCard: React.FC<ImgType> = ({ img }) => {
   return (
     <div className="text-center w-[100%] ">
-      <img className="mb-[30px] w-[100%] " src={img} alt="" />
+      <Image className="mb-[30px] w-[100%] " src={img} alt={img} width={500} height={500} />
       <p className="text-[24px] font-[700] text-[#444444]">
         Thermo Ball Etip Gloves
       </p>

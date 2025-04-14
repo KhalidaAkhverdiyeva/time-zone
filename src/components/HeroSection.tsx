@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import HeroSecText from "./HeroSecText";
 import { motion, useAnimation } from "framer-motion";
+import Image from "next/image";
 
 const HeroSection = () => {
   const [textKey, setTextKey] = useState(0);
@@ -53,10 +54,12 @@ const HeroSection = () => {
           animate={controls}
           style={{ zIndex: "50" }}
         >
-          <img
+          <Image
             src="https://preview.colorlib.com/theme/timezone/assets/img/hero/watch.png.webp"
             alt="Watch"
             className="animate-heartbeat"
+            width={600}
+            height={600}
           />
         </motion.div>
       </div>

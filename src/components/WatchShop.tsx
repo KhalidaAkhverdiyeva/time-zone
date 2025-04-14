@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const WatchShop = () => {
@@ -6,10 +7,12 @@ const WatchShop = () => {
       <h2 className="absolute text-[26px] md:text-[70px] text-[#0b1c39] font-[700]">
         Watch Shop
       </h2>
-      <img
+      <Image
         src="https://preview.colorlib.com/theme/timezone/assets/img/hero/about_hero.png.webp"
         alt="/"
         className="md:w-full md:h-[100%] h-[400px]"
+        width={600}
+        height={600}
       />
     </div>
   );

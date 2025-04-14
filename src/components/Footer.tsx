@@ -4,16 +4,19 @@ import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaGlobe } from "react-icons/fa";
 import { LiaBehance } from "react-icons/lia";
+import Image from "next/image";
 
 const Footer = () => {
   return (
     <div className="w-full max-w-[1170px] mx-auto mb-[100px] px-[15px] md:px-[0px] ">
       <div className="flex flex-col md:flex-row mb-[50px] md:mb-[100px] gap-[20px] md:gap-[0px]">
         <div className="md:w-[25%] w-[100%] ">
-          <img
+          <Image
             className="mb-[40px]"
             src="https://preview.colorlib.com/theme/timezone/assets/img/logo/logo2_footer.png"
-            alt=""
+            alt="footerimg"
+            width={600}
+            height={600}
           />
           <p className="text-[#868c98] font-[300]">
             Asorem ipsum adipolor sdit amet, consectetur adipisicing elitcf sed

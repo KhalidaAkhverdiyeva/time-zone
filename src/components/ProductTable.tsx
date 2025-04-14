@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const ProductTable = () => {
@@ -53,10 +54,12 @@ const ProductTable = () => {
               className="border-b border-b-gray-300 text-[12px] md:text-[16px]"
             >
               <td className="py-[30px] flex flex-col  md:flex-row items-center md:w-[65%]">
-                <img
+                <Image
                   src={product.img}
                   alt=""
                   className=" md:w-[150px] md:h-[150px] md:mr-[20px]"
+                  width={600}
+                  height={600}
                 />
                 {product.name}
               </td>

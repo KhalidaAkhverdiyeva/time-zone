@@ -11,6 +11,7 @@ import BlogIntaFeed from "@/components/BlogIntaFeed";
 import BlogNewsLatter from "@/components/BlogNewsLatter";
 import { IoMdHeart } from "react-icons/io";
 import { LiaBehance } from "react-icons/lia";
+import Image from "next/image";
 
 interface Post {
   _id: string;
@@ -61,7 +62,8 @@ const BlogDetail = async ({ params }: { params: { blog_details: string } }) => {
         <div className="w-full max-w-[1170px] mx-auto px-[15px] md:px-[0px] flex flex-col md:flex-row gap-[30px]">
           <div className="md:w-[64%] mb-[50px] cursor-pointer">
             <div className="relative">
-              <img src={post.image.asset.url} alt={post.title} />
+              <Image src={post.image.asset.url} alt={post.title} width={400}
+              height={400} />
             </div>
 
             <div className="py-[20px] pr-[30px]">
