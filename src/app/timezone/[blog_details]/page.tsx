@@ -62,8 +62,8 @@ const BlogDetail = async ({ params }: { params: { blog_details: string } }) => {
         <div className="w-full max-w-[1170px] mx-auto px-[15px] md:px-[0px] flex flex-col md:flex-row gap-[30px]">
           <div className="md:w-[64%] mb-[50px] cursor-pointer">
             <div className="relative">
-              <Image src={post.image.asset.url} alt={post.title} width={400}
-              height={400} />
+              <Image src={post.image.asset.url} alt={post.title} width={750}
+              height={375} />
             </div>
 
             <div className="py-[20px] pr-[30px]">

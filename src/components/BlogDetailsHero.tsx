@@ -11,8 +11,8 @@ const BlogDetailsHero = () => {
         src="https://preview.colorlib.com/theme/timezone/assets/img/hero/about_hero.png.webp"
         alt=""
         className="md:h-[100%] h-[400px]"
-        width={500}
-        height={400}
+        width={2080}
+        height={278}
       />
     </div>
   );

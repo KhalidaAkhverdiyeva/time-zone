@@ -14,7 +14,7 @@ const CardPage = () => {
           src="https://preview.colorlib.com/theme/timezone/assets/img/hero/about_hero.png.webp"
           alt=""
           className="h-[400px] md:h-[100%]"
-          width={700}
+          width={2080}
           height={400}
         />
       </div>
